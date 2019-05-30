@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root prefHeight="668.0" prefWidth="1290.0" style="-fx-background-color: #C0C4CB;" stylesheets="@css/roomScreenStyle.css" type="GridPane" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alancerpro.controller.CustomersController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="80.0" minHeight="5.0" prefHeight="80.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="413.0" minHeight="10.0" prefHeight="269.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="347.0" minHeight="10.0" prefHeight="238.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="326.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane>
+         <children>
+            <Text fill="#133067" layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers" wrappingWidth="131.42138671875">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="searchCustomerTextField" focusColor="#00b4ff" layoutX="720.0" layoutY="37.0" onKeyPressed="#handleSearchKey" prefHeight="26.0" prefWidth="204.0" />
+            <JFXButton layoutX="936.0" layoutY="37.0" onAction="#handleSearchCustomer" prefHeight="26.0" prefWidth="94.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Search" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <JFXTreeTableView fx:id="customersTableView" stylesheets="@css/tableStyle.css" GridPane.rowIndex="1">
+         <columns>
+            <TreeTableColumn fx:id="columnCustomerName" prefWidth="300.0" text="Name" />
+            <TreeTableColumn fx:id="columnPhoneNumber" prefWidth="210.0" text="Phone Number" />
+            <TreeTableColumn fx:id="columnEmail" prefWidth="237.0" text="Email" />
+            <TreeTableColumn fx:id="columnAddress" prefWidth="451.0" text="Address" />
+         </columns>
+      </JFXTreeTableView>
+      <JFXTabPane id="clients_tab_pane" prefHeight="262.0" prefWidth="1290.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="2">
+         <tabs>
+            <Tab text="General">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="idTextField" focusColor="#00b4ff" layoutX="89.0" layoutY="15.0" prefHeight="26.0" prefWidth="263.0" unFocusColor="#133067" />
+                        <Text layoutX="15.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="nameTextField" focusColor="#00b4ff" layoutX="89.0" layoutY="67.0" prefHeight="26.0" prefWidth="263.0" unFocusColor="#133067" />
+                        <Text layoutX="15.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="phoneTextField" focusColor="#00b4ff" layoutX="89.0" layoutY="123.0" prefHeight="26.0" prefWidth="263.0" unFocusColor="#133067" />
+                        <Text layoutX="470.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="emailTextField" focusColor="#00b4ff" layoutX="543.0" layoutY="17.0" prefHeight="26.0" prefWidth="263.0" unFocusColor="#133067" />
+                        <Text layoutX="470.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="addressTextField" focusColor="#00b4ff" layoutX="543.0" layoutY="71.0" prefHeight="26.0" prefWidth="496.0" unFocusColor="#133067" />
+                        <JFXTextField fx:id="address2TextField" focusColor="#00b4ff" layoutX="543.0" layoutY="116.0" prefHeight="26.0" prefWidth="496.0" unFocusColor="#133067" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Account">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTreeTableView fx:id="accountsTableView" layoutY="-1.0" prefHeight="207.0" prefWidth="349.0" stylesheets="@css/tableStyle.css">
+                           <columns>
+                              <TreeTableColumn fx:id="columnReservationId" prefWidth="157.0" text="Reservation Id" />
+                              <TreeTableColumn fx:id="columnAccountDebt" prefWidth="102.0" text="Debt" />
+                              <TreeTableColumn fx:id="columnBalance" prefWidth="85.0" text="Balance" />
+                           </columns>
+                        </JFXTreeTableView>
+                        <JFXTreeTableView fx:id="paymentsTableView" layoutX="349.0" layoutY="-1.0" prefHeight="207.0" prefWidth="570.0" stylesheets="@css/tableStyle.css">
+                           <columns>
+                              <TreeTableColumn fx:id="columnPaymentAmount" prefWidth="142.0" text="Amount" />
+                              <TreeTableColumn fx:id="columnPaymentType" prefWidth="140.0" text="Type" />
+                           </columns>
+                        </JFXTreeTableView>
+                        <Text layoutX="948.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Balance:" wrappingWidth="138.9296875">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="totalBalanceText" layoutX="1073.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+         <children>
+            <HBox layoutX="674.0" prefHeight="72.0" prefWidth="542.0">
+               <children>
+                  <JFXButton onAction="#handleAddButton" prefHeight="38.0" prefWidth="112.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Add" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="17.0" top="17.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#handleSaveButton" prefHeight="38.0" prefWidth="112.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Save" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="17.0" top="17.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#handleDeleteButton" prefHeight="38.0" prefWidth="112.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Delete" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="17.0" top="17.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#handleClearButton" prefHeight="38.0" prefWidth="112.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Clear" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets top="17.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXButton fx:id="selectForReservationButton" layoutX="14.0" layoutY="17.0" onAction="#handleSelectForReservation" prefHeight="38.0" prefWidth="204.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Select For Reservation" textFill="WHITE" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>

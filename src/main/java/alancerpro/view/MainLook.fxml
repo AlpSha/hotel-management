@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alancerpro.controller.Controller">
+   <top>
+      <GridPane style="-fx-background-color: #C0C4CB;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="526.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="526.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="526.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="526.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="526.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="526.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="526.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="24.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <MenuBar style="-fx-background-color: #C0C4CB;" GridPane.columnSpan="2147483647">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <JFXButton fx:id="reservations" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#mainMenuTabClicked" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Reservations" textFill="#133067" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin></JFXButton>
+            <JFXButton fx:id="stays" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#mainMenuTabClicked" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Stays" textFill="#133067" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin></JFXButton>
+            <JFXButton fx:id="calendar" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#mainMenuTabClicked" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Calendar" textFill="#133067" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin></JFXButton>
+             <JFXButton fx:id="rooms" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#mainMenuTabClicked" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Rooms" textFill="#133067" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                 <font>
+                     <Font size="16.0" />
+                 </font>
+                 <GridPane.margin>
+                     <Insets right="10.0" />
+                 </GridPane.margin></JFXButton>
+            <JFXButton fx:id="customers" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#mainMenuTabClicked" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Customers" textFill="#133067" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </JFXButton>
+             <JFXButton fx:id="users" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#mainMenuTabClicked" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Users" textFill="#133067" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                 <font>
+                     <Font size="16.0" />
+                 </font>
+                 <GridPane.margin>
+                     <Insets right="10.0" />
+                 </GridPane.margin>
+             </JFXButton>
+            <JFXButton fx:id="logOut" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#mainMenuTabClicked" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Log Out" textFill="#133067" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </top>
+</BorderPane>

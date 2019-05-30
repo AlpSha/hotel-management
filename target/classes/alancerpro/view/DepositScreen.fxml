@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="620.0" style="-fx-background-color: #C0C4CB;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alancerpro.controller.DepositScreenController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="620.0" prefWidth="620.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="346.0" minHeight="346.0" prefHeight="346.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="82.0" minHeight="82.0" prefHeight="82.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane minHeight="200.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Method" />
+            <Text layoutX="166.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose...">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="20.0" layoutY="70.0" minHeight="200.0" minWidth="560.0" prefHeight="200.0" prefWidth="536.0" style="-fx-background-color: #fff;">
+               <children>
+                  <JFXButton fx:id="btnCash" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minWidth="120.0" onAction="#handlePaymentTypeButtons" prefHeight="60.0" prefWidth="120.0" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Cash" textFill="#133067" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnVisa" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" maxWidth="1.7976931348623157E308" minWidth="120.0" onAction="#handlePaymentTypeButtons" prefHeight="60.0" prefWidth="120.0" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Visa" textFill="#133067" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnMasterCard" alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" maxWidth="1.7976931348623157E308" minWidth="120.0" onAction="#handlePaymentTypeButtons" prefHeight="60.0" prefWidth="120.0" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="MasterCard" textFill="#133067" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAmericanExpress" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="80.0" maxWidth="1.7976931348623157E308" minWidth="120.0" onAction="#handlePaymentTypeButtons" prefHeight="60.0" prefWidth="120.0" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="American Express" textFill="#133067" wrapText="true" AnchorPane.topAnchor="80.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCheck" alignment="CENTER" contentDisplay="CENTER" layoutX="240.0" maxWidth="1.7976931348623157E308" minWidth="120.0" onAction="#handlePaymentTypeButtons" prefHeight="60.0" prefWidth="120.0" ripplerFill="#133067e0" style="-fx-background-color: #00B4FF;" text="Check" textFill="#133067" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <JFXTextField fx:id="paidAmount" focusColor="#00b4ff" layoutX="250.0" layoutY="294.0" onKeyPressed="#handleEnterKey" prefHeight="26.0" prefWidth="120.0" unFocusColor="#133067" />
+            <Text layoutX="155.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Paid">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="moreButton" layoutX="400.0" layoutY="291.0" maxHeight="46.0" maxWidth="120.0" onAction="#handleMoreButton" prefHeight="35.0" prefWidth="80.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="More..." textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="detailsPane" maxHeight="370.0" maxWidth="595.0" minHeight="0.0" minWidth="595.0" prefHeight="0.0" prefWidth="595.0" style="-fx-background-color: #C0C4CB;" visible="false" GridPane.rowIndex="1">
+         <children>
+            <JFXTextField disable="true" editable="false" layoutX="89.0" layoutY="29.0" prefHeight="26.0" prefWidth="120.0" />
+            <Text layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Net:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <JFXButton layoutX="287.0" layoutY="19.0" maxHeight="46.0" maxWidth="120.0" onAction="#handleAddButton" prefHeight="35.0" prefWidth="80.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Add" textFill="WHITE" />
+            <JFXButton layoutX="399.0" layoutY="19.0" maxHeight="46.0" maxWidth="120.0" onAction="#handleDeleteButton" prefHeight="35.0" prefWidth="80.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Delete" textFill="WHITE" />
+            <JFXTreeTableView fx:id="paymentsTableView" layoutX="14.0" layoutY="78.0" maxHeight="260.0" maxWidth="565.0" minHeight="260.0" minWidth="565.0" prefHeight="260.0" prefWidth="565.0" stylesheets="@css/tableStyle.css">
+               <columns>
+                  <TreeTableColumn fx:id="columnAmount" prefWidth="114.0" text="Amount" />
+                  <TreeTableColumn fx:id="columnType" prefWidth="156.0" text="Type" />
+               </columns>
+            </JFXTreeTableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="80.0" prefHeight="200.0" prefWidth="607.0" GridPane.rowIndex="2">
+         <children>
+            <JFXButton layoutX="123.0" layoutY="14.0" maxHeight="46.0" maxWidth="120.0" onAction="#handleCancelButton" prefHeight="35.0" prefWidth="80.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Cancel" textFill="WHITE" AnchorPane.leftAnchor="123.0" />
+            <JFXButton layoutX="21.0" layoutY="14.0" maxHeight="46.0" maxWidth="120.0" onAction="#handleOkButton" prefHeight="35.0" prefWidth="80.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="OK" textFill="WHITE" AnchorPane.leftAnchor="21.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

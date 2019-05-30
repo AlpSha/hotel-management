@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane prefHeight="650.0" prefWidth="1117.0" style="-fx-background-color: #C0C4CB;" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alancerpro.controller.ReservationDetailController">
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="200.0" prefHeight="132.0" prefWidth="1049.0" style="-fx-background-color: #C0C4CB;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+        <children>
+            <Label layoutX="14.0" layoutY="27.0" prefHeight="28.0" prefWidth="81.0" text="Guest" />
+            <Text fx:id="customerNameText" layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name Surname" wrappingWidth="136.7294921875">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Text>
+            <JFXButton fx:id="buttonCustomer" layoutX="163.0" layoutY="41.0" maxHeight="40.0" maxWidth="110.0" prefHeight="8.0" prefWidth="36.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="..." textFill="WHITE" onAction="#handleCustomerSelection"/>
+            <Label layoutX="14.0" layoutY="92.0" prefHeight="28.0" prefWidth="118.0" text="Reservation ID" />
+            <Text fx:id="reservationIdText" layoutX="14.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12345" wrappingWidth="46.083984375" />
+            <Label layoutX="17.0" layoutY="154.0" prefHeight="28.0" prefWidth="81.0" text="From Date" />
+            <Label layoutX="257.0" layoutY="154.0" prefHeight="28.0" prefWidth="81.0" text="To Date" />
+            <Label layoutX="499.0" layoutY="154.0" prefHeight="28.0" prefWidth="94.0" text="Total Nights" />
+            <Text fx:id="totalNights" layoutX="499.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+            <Label layoutX="257.0" layoutY="93.0" prefHeight="28.0" prefWidth="81.0" text="Status" />
+            <Text fx:id="status" layoutX="257.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="136.7294921875">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Text>
+            <DatePicker fx:id="startDate" layoutX="14.0" layoutY="179.0" />
+            <DatePicker fx:id="endDate" layoutX="257.0" layoutY="179.0" />
+         <Label fx:id="balanceLabel" layoutX="662.0" layoutY="160.0" text="Balance Due" visible="false" />
+         <Text fx:id="balanceText" layoutX="662.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" visible="false" />
+        </children>
+    </AnchorPane>
+    <JFXTreeTableView fx:id="reservationsTableView" maxWidth="1.7976931348623157E308" minHeight="150.0" prefHeight="364.0" prefWidth="919.0" stylesheets="@css/tableStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+        <columns>
+            <TreeTableColumn fx:id="columnRoom" prefWidth="110.0" text="Room" />
+            <TreeTableColumn fx:id="columnAdults" prefWidth="67.0" text="Adults" />
+            <TreeTableColumn fx:id="columnChilds" prefWidth="71.0" text="Childs" />
+            <TreeTableColumn fx:id="columnStartDate" prefWidth="162.0" text="From Date" />
+            <TreeTableColumn fx:id="columnEndDate" minWidth="3.0" prefWidth="161.0" text="To Date" />
+            <TreeTableColumn fx:id="columnNumberOfDays" maxWidth="3000.0" prefWidth="72.0" text="Nights" />
+            <TreeTableColumn prefWidth="275.0" text="Note" />
+        </columns>
+    </JFXTreeTableView>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="150.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+        <children>
+            <JFXButton fx:id="buttonAdd" layoutX="33.0" layoutY="14.0" maxHeight="40.0" maxWidth="110.0" onAction="#handleAddButton" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Add" textFill="WHITE" />
+            <JFXButton fx:id="buttonSaveSide" layoutX="33.0" layoutY="69.0" maxHeight="40.0" maxWidth="110.0" onAction="#handleSaveButton" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Save" textFill="WHITE" />
+            <JFXButton fx:id="buttonDelete" layoutX="33.0" layoutY="124.0" maxHeight="40.0" maxWidth="110.0" onAction="#handleDeleteButton" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Delete" textFill="WHITE" />
+        </children>
+    </AnchorPane>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="44.0" prefHeight="72.0" prefWidth="1120.0" style="-fx-background-color: #C0C4CB;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+        <children>
+            <Label layoutX="832.0" layoutY="50.0" prefHeight="16.0" prefWidth="82.0" text="Username:" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="203.0" />
+            <Label layoutX="983.0" layoutY="50.0" text="User Type:" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="63.0" />
+            <Text layoutX="914.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="admin" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="162.26708984375" />
+            <Text layoutX="1061.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="14.34033203125" />
+            <HBox layoutY="18.0" maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="70.0" prefHeight="40.0" prefWidth="719.0" style="-fx-background-color: #C0C4CB;">
+                <children>
+                    <JFXButton maxHeight="40.0" maxWidth="110.0" onAction="#handleReservationsButton" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Reservations" textFill="WHITE">
+                        <HBox.margin>
+                            <Insets left="32.0" top="7.0" />
+                        </HBox.margin>
+                    </JFXButton>
+                    <JFXButton fx:id="buttonSaveBottom" maxHeight="40.0" maxWidth="110.0" onAction="#handleSaveButton" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Save" textFill="WHITE">
+                        <HBox.margin>
+                            <Insets left="20.0" top="7.0" />
+                        </HBox.margin>
+                    </JFXButton>
+                    <JFXButton fx:id="buttonCheckIn" maxHeight="40.0" maxWidth="110.0" onAction="#handleCheckInButton" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Check In" textFill="WHITE">
+                        <HBox.margin>
+                            <Insets left="100.0" top="7.0" />
+                        </HBox.margin>
+                    </JFXButton>
+                    <JFXButton fx:id="buttonCheckOut" maxHeight="40.0" maxWidth="110.0" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Check Out" textFill="WHITE" onAction="#handleCheckOutButton">
+                        <HBox.margin>
+                            <Insets top="7.0" />
+                        </HBox.margin>
+                    </JFXButton>
+               <JFXButton fx:id="buttonDeposit" maxHeight="40.0" maxWidth="110.0" onAction="#handleDepositButton" prefHeight="33.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Deposit" textFill="WHITE" visible="false">
+                  <HBox.margin>
+                     <Insets left="50.0" top="7.0" />
+                  </HBox.margin>
+               </JFXButton>
+                </children>
+            </HBox>
+        </children>
+    </AnchorPane>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints maxHeight="264.0" minHeight="238.0" prefHeight="238.0" />
+        <RowConstraints maxHeight="416.0" minHeight="150.0" prefHeight="339.0" />
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="70.0" prefHeight="78.0" />
+    </rowConstraints>
+</GridPane>

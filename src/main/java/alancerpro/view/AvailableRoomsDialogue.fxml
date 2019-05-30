@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="612.0" style="-fx-background-color: #C0C4CB;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alancerpro.controller.AvailableRoomsController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="74.0" minHeight="0.0" prefHeight="74.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="366.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text fill="#133067" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Rooms" GridPane.halignment="CENTER">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <JFXTreeTableView fx:id="availableRoomsTableView" stylesheets="@css/tableStyle.css" GridPane.rowIndex="1">
+         <columns>
+            <TreeTableColumn fx:id="columnRoom" prefWidth="116.0" text="Room" />
+            <TreeTableColumn fx:id="columnType" prefWidth="206.0" text="Type" />
+         </columns>
+      </JFXTreeTableView>
+      <AnchorPane prefWidth="605.0" GridPane.rowIndex="2">
+         <children>
+            <JFXButton layoutX="324.0" layoutY="19.0" maxHeight="40.0" maxWidth="110.0" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Cancel" textFill="WHITE" onAction="#handleCancelButton"/>
+            <JFXButton layoutX="174.0" layoutY="19.0" maxHeight="40.0" maxWidth="110.0" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Add" textFill="WHITE" onAction="#handleAddButton"/>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root prefHeight="515.0" prefWidth="1053.0" type="GridPane" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alancerpro.controller.StaysController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="55.0" minHeight="5.0" prefHeight="45.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="20.0" prefHeight="407.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <JFXTreeTableView fx:id="reservationsTableView" minHeight="20.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="250.0" prefWidth="981.0" stylesheets="@css/tableStyle.css" GridPane.rowIndex="2">
+            <columns>
+                <TreeTableColumn fx:id="columnReservationID" prefWidth="146.0" text="Stay ID" />
+                <TreeTableColumn fx:id="columnCustomer" prefWidth="259.0" text="Client" />
+                <TreeTableColumn fx:id="columnStartDate" prefWidth="168.0" text="Check-In Date" />
+                <TreeTableColumn fx:id="columnEndDate" prefWidth="160.0" text="Check-Out Date" />
+                <TreeTableColumn fx:id="columnTotalDays" prefWidth="259.0" text="Total Days" />
+            </columns></JFXTreeTableView>
+        <StackPane prefHeight="60.0" prefWidth="969.0" style="-fx-background-color: #C0C4CB;" GridPane.columnSpan="2147483647" />
+        <AnchorPane minWidth="200.0" prefHeight="82.0" prefWidth="1052.0" style="-fx-background-color: #C0C4CB;" GridPane.rowIndex="1">
+            <children>
+                <JFXTextField fx:id="searchReservationTextField" focusColor="#00b4ff" layoutX="720.0" layoutY="12.0" onKeyPressed="#handleSearchField" prefHeight="26.0" prefWidth="204.0" unFocusColor="#133067" />
+                <JFXButton fx:id="searchReservationButton" layoutX="936.0" layoutY="12.0" onAction="#handleSearchReservation" prefHeight="26.0" prefWidth="94.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Search" textFill="WHITE" />
+                <Text fill="#133067" layoutX="22.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stays">
+                    <font>
+                        <Font size="23.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+        <AnchorPane maxWidth="1.7976931348623157E308" minHeight="44.0" prefHeight="257.0" prefWidth="1052.0" style="-fx-background-color: #C0C4CB;" GridPane.rowIndex="3">
+            <children>
+                <HBox layoutX="-1.0" layoutY="-1.0" minHeight="-Infinity" minWidth="70.0" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #C0C4CB;">
+                    <children>
+                        <JFXButton maxHeight="40.0" maxWidth="110.0" onAction="#handleShowButton" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Show Stay" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="32.0" top="7.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton maxHeight="40.0" maxWidth="110.0" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Check-In" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="20.0" top="7.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton maxHeight="40.0" maxWidth="110.0" prefHeight="37.0" prefWidth="103.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Delete" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="20.0" top="7.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                    </children>
+                </HBox>
+                <Label layoutX="692.0" layoutY="28.0" prefHeight="16.0" prefWidth="82.0" text="Username:" AnchorPane.rightAnchor="278.0" />
+                <Label layoutX="893.0" layoutY="28.0" text="User Type:" AnchorPane.rightAnchor="88.0" />
+                <Text fx:id="usernameText" layoutX="774.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="admin" AnchorPane.rightAnchor="237.26708984375" />
+                <Text fx:id="userTypeText" layoutX="971.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" AnchorPane.rightAnchor="39.34033203125" />
+            </children>
+        </AnchorPane>
+    </children>
+</fx:root>

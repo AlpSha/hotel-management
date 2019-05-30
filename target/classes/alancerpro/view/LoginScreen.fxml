@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #C0C4CB;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alancerpro.controller.LoginController">
+   <children>
+      <JFXTextField fx:id="usernameTextField" focusColor="#00b4ff" layoutX="166.0" layoutY="124.0" onKeyPressed="#onKeyPressed" prefHeight="26.0" prefWidth="262.0" unFocusColor="#133067" />
+      <Label layoutX="89.0" layoutY="129.0" text="Username" textFill="#121624" />
+      <JFXPasswordField fx:id="passwordField" focusColor="#00b4ff" layoutX="166.0" layoutY="192.0" onKeyPressed="#onKeyPressed" prefHeight="26.0" prefWidth="262.0" unFocusColor="#133067" />
+      <Label layoutX="89.0" layoutY="197.0" prefHeight="16.0" prefWidth="67.0" text="Password" textFill="#121624" />
+      <JFXButton layoutX="166.0" layoutY="303.0" onAction="#handleLoginButton" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #133067;" text="Login" textFill="WHITE" />
+      <JFXButton layoutX="313.0" layoutY="303.0" onAction="#handleExitButton" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #133067;" text="Exit" textFill="WHITE" />
+      <Text fill="#133067" layoutX="264.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="66.99999868869781">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

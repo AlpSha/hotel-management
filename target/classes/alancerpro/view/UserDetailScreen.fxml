@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="522.0" style="-fx-background-color: C0C4CB;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alancerpro.controller.UserDetailsController">
+   <children>
+
+
+      <Text layoutX="38.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id:" wrappingWidth="117.306640625" AnchorPane.topAnchor="57.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="idTextField" focusColor="#00b4ff" layoutX="163.0" layoutY="57.0" prefHeight="26.0" prefWidth="264.0" unFocusColor="#133067" AnchorPane.topAnchor="57.0" />
+
+
+      <Text layoutX="38.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="117.306640625" AnchorPane.topAnchor="124.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="nameTextField" focusColor="#00b4ff" layoutX="163.0" layoutY="124.0" prefHeight="26.0" prefWidth="264.0" unFocusColor="#133067" AnchorPane.topAnchor="124.0" />
+
+
+      <Text layoutX="38.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="117.306640625" AnchorPane.topAnchor="191.07666015625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="usernameTextField" focusColor="#00b4ff" layoutX="163.0" layoutY="191.0" prefHeight="26.0" prefWidth="264.0" unFocusColor="#133067" AnchorPane.topAnchor="191.0" />
+
+
+      <Text layoutX="38.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="117.306640625" AnchorPane.topAnchor="258.07666015625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <JFXPasswordField fx:id="passwordField" focusColor="#00b4ff" layoutX="163.0" layoutY="258.0" prefHeight="26.0" prefWidth="264.0" unFocusColor="#133067" AnchorPane.topAnchor="258.0" />
+
+
+      <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Type:" wrappingWidth="117.306640625" AnchorPane.topAnchor="325.07666015625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="userTypeChoiceBox" layoutX="163.0" layoutY="325.0" prefHeight="26.0" prefWidth="264.0" AnchorPane.topAnchor="325.0" />
+
+
+      <Text layoutX="38.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="117.306640625" AnchorPane.topAnchor="392.07666015625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="emailTextBox" focusColor="#00b4ff" layoutX="163.0" layoutY="392.0" prefHeight="26.0" prefWidth="264.0" unFocusColor="#133067" AnchorPane.topAnchor="392.0" />
+
+
+      <Text layoutX="38.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" wrappingWidth="117.306640625" AnchorPane.topAnchor="459.07666015625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="addressTextBox" focusColor="#00b4ff" layoutX="163.0" layoutY="459.0" prefHeight="26.0" prefWidth="264.0" unFocusColor="#133067" AnchorPane.topAnchor="459.0" />
+
+
+      <Text layoutX="38.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" wrappingWidth="117.306640625" AnchorPane.topAnchor="526.07666015625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="phoneNumberTextBox" focusColor="#00b4ff" layoutX="163.0" layoutY="526.0" prefHeight="26.0" prefWidth="264.0" unFocusColor="#133067" AnchorPane.topAnchor="526.0" />
+
+
+      <JFXButton layoutX="99.0" layoutY="624.0" onAction="#handleSaveButton" prefHeight="38.0" prefWidth="112.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Save" textFill="WHITE" />
+      <JFXButton layoutX="315.0" layoutY="624.0" onAction="#handleCloseButton" prefHeight="38.0" prefWidth="112.0" ripplerFill="#00b4ff" style="-fx-background-color: #133067;" text="Close" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_hotelmanagement" default="compile.module.hotelmanagement">
+  <dirname property="module.hotelmanagement.basedir" file="${ant.file.module_hotelmanagement}"/>
+  
+  <property name="module.jdk.home.hotelmanagement" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.hotelmanagement" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.hotelmanagement" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.hotelmanagement" value="-encoding UTF-8 -source 11 -target 11 ${compiler.args}"/>
+  
+  <property name="hotelmanagement.output.dir" value="${module.hotelmanagement.basedir}/out/production/HotelManagement"/>
+  <property name="hotelmanagement.testoutput.dir" value="${module.hotelmanagement.basedir}/out/test/HotelManagement"/>
+  
+  <path id="hotelmanagement.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="hotelmanagement.module.production.classpath">
+    <path refid="${module.jdk.classpath.hotelmanagement}"/>
+    <path refid="library.sqlite-jdbc-3.27.2.1.classpath"/>
+    <path refid="library.jfoenix-9.0.8.classpath"/>
+    <path refid="library.javafx.classpath"/>
+  </path>
+  
+  <path id="hotelmanagement.runtime.production.module.classpath">
+    <pathelement location="${hotelmanagement.output.dir}"/>
+    <path refid="library.sqlite-jdbc-3.27.2.1.classpath"/>
+    <path refid="library.jfoenix-9.0.8.classpath"/>
+    <path refid="library.javafx.classpath"/>
+  </path>
+  
+  <path id="hotelmanagement.module.classpath">
+    <path refid="${module.jdk.classpath.hotelmanagement}"/>
+    <pathelement location="${hotelmanagement.output.dir}"/>
+    <path refid="library.sqlite-jdbc-3.27.2.1.classpath"/>
+    <path refid="library.jfoenix-9.0.8.classpath"/>
+    <path refid="library.javafx.classpath"/>
+  </path>
+  
+  <path id="hotelmanagement.runtime.module.classpath">
+    <pathelement location="${hotelmanagement.testoutput.dir}"/>
+    <pathelement location="${hotelmanagement.output.dir}"/>
+    <path refid="library.sqlite-jdbc-3.27.2.1.classpath"/>
+    <path refid="library.jfoenix-9.0.8.classpath"/>
+    <path refid="library.javafx.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.hotelmanagement">
+    <patternset refid="ignored.files"/>
+    <exclude name="out/**"/>
+    <exclude name="out/artifacts/**"/>
+    <exclude name="out/artifacts/HotelManagement_jar/**"/>
+    <exclude name="out/production/**"/>
+    <exclude name="out/production/HotelManagement/**"/>
+    <exclude name="out/production/HotelManagement/src/**"/>
+    <exclude name="out/production/HotelManagement/src/alancerpro/**"/>
+    <exclude name="out/production/HotelManagement/src/alancerpro/contents/**"/>
+    <exclude name="out/production/HotelManagement/.idea/**"/>
+    <exclude name="out/production/HotelManagement/.idea/artifacts/**"/>
+    <exclude name="out/production/HotelManagement/.idea/libraries/**"/>
+    <exclude name="out/production/HotelManagement/.idea/dataSources/**"/>
+    <exclude name="out/production/HotelManagement/.idea/dataSources/a3a94d71-3ef1-4c7e-af14-db70d42cb3a7/**"/>
+    <exclude name="out/production/HotelManagement/.idea/dataSources/a3a94d71-3ef1-4c7e-af14-db70d42cb3a7/storage_v2/**"/>
+    <exclude name="out/production/HotelManagement/.idea/dataSources/a3a94d71-3ef1-4c7e-af14-db70d42cb3a7/storage_v2/_src_/**"/>
+    <exclude name="out/production/HotelManagement/.idea/dataSources/a3a94d71-3ef1-4c7e-af14-db70d42cb3a7/storage_v2/_src_/schema/**"/>
+    <exclude name="out/production/HotelManagement/alancerpro/**"/>
+    <exclude name="out/production/HotelManagement/alancerpro/model/**"/>
+    <exclude name="out/production/HotelManagement/alancerpro/model/interaction/**"/>
+    <exclude name="out/production/HotelManagement/alancerpro/contents/**"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.hotelmanagement">
+    <patternset refid="excluded.from.module.hotelmanagement"/>
+  </patternset>
+  
+  <path id="hotelmanagement.module.sourcepath">
+    <dirset dir="${module.hotelmanagement.basedir}/../../Java">
+      <include name="HotelManagement/src"/>
+      <include name="HotelManagement"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.hotelmanagement" depends="compile.module.hotelmanagement.production,compile.module.hotelmanagement.tests" description="Compile module HotelManagement"/>
+  
+  <target name="compile.module.hotelmanagement.production" depends="register.custom.compilers" description="Compile module HotelManagement; production classes">
+    <mkdir dir="${hotelmanagement.output.dir}"/>
+    <javac2 destdir="${hotelmanagement.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.hotelmanagement}/javac">
+      <compilerarg line="${compiler.args.hotelmanagement}"/>
+      <bootclasspath refid="hotelmanagement.module.bootclasspath"/>
+      <classpath refid="hotelmanagement.module.production.classpath"/>
+      <src refid="hotelmanagement.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.hotelmanagement"/>
+    </javac2>
+    
+    <copy todir="${hotelmanagement.output.dir}">
+      <fileset dir="${module.hotelmanagement.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.hotelmanagement.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.hotelmanagement.tests" depends="register.custom.compilers,compile.module.hotelmanagement.production" description="compile module HotelManagement; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.hotelmanagement" description="cleanup module">
+    <delete dir="${hotelmanagement.output.dir}"/>
+    <delete dir="${hotelmanagement.testoutput.dir}"/>
+  </target>
+</project>
